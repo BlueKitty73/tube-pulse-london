@@ -1,24 +1,23 @@
-# Tube Pulse London — v2
+# Tube Pulse London — v3
 
-Personal, independent mobile-first Progressive Web App. Not affiliated with Transport for London.
+An independent personal iPhone-compatible PWA using TfL public data. London-only in this release; all 20 existing curated stations remain.
 
-## Install on iPhone
+## Replace your GitHub Pages version
 
-1. Extract the zip. Publish the contents of the `tube-pulse` directory (including `index.html`, `sw.js`, icons, and manifest) to an HTTPS host such as GitHub Pages or Netlify.
-2. Open that HTTPS site in iPhone Safari.
-3. Use Share → Add to Home Screen. This is a PWA, not an App Store .ipa, so it cannot install by opening the zip directly.
+1. Unzip this download. Open the inner `tube-pulse` directory.
+2. On GitHub, open your **existing** `tube-pulse-london` repository and upload the files inside that directory to the **root** of the repository. Commit the changes, replacing the older files with the same names.
+3. Keep the existing repository, username and Pages settings; your website URL remains unchanged.
+4. Revisit the site on your iPhone with internet connected. If the Home Screen copy still displays v2, open the page in Safari and reload it, or remove/re-add the Home Screen shortcut after refreshing.
 
-## Features
+## Version 3
 
-- 20 curated major stations; filter and search; saved favorites kept locally.
-- Interactive *simplified and not geographically accurate* network schematic; does not show all stations, connections are illustrative.
-- TfL live arrivals (auto refresh about 45s for open station) and network statuses, subject to network connectivity and API limits.
-- Experimental non-live, non-measured crowding planner based on generic category/rush-hour heuristics. This is not live passenger load, measured NUMBAT values, station queue estimates, or a guarantee of seat availability.
-- TfL stop metadata display for available accessibility properties. Absence of a property does not establish step-free access.
-- Station highlights and links to maps and official TfL journey planning.
+- Keeps the featured 20-station search, favorites, TfL line status and live arrival API integration.
+- Adds expanded platform filter, a clearer train board and refresh action.
+- Adds map zoom to the existing **illustrative** clickable 20-station schematic, with a link to TfL's **full official map**. This is *not* a full interactive map of every Tube station.
+- Adds links for station-local cafes, food, attractions and shops via current Google Maps searches (not a verified or pre-fetched nearby-places database).
+- Adds direct links for official TfL step-free guidance, status updates, and journey planning. Metadata may be incomplete.
+- Keeps transparent time-of-day crowding estimates using an **illustrative heuristic**. This does not represent live train occupancy, observed passenger counts, actual wait time to enter a platform, or predictions calibrated to NUMBAT data.
 
-## Future integration
+**Testing:** Live TfL arrivals and stop metadata need online testing on the deployed site. Requests can fail, be rate-limited, or be incomplete. Official travel information takes precedence. No native SwiftUI/IPA is included.
 
-For real research-grade historical estimates, import and normalize TfL NUMBAT (station flows, boarders, link loads by 15-minute intervals and day type). If live train occupancy data becomes available, display it separately from forecasts and label its freshness and source. TfL Unified API: https://api.tfl.gov.uk/ . NUMBAT: https://tfl.gov.uk/info-for/open-data-users/our-open-data .
-
-For native App Store/iOS installation, this design can be ported to SwiftUI; v2 ships as a PWA.
+© TfL for the public API data when retrieved; independent project, not affiliated with TfL.
