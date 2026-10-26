@@ -1,7 +1,7 @@
 {
-  "name": "Tube Pulse London v4",
+  "name": "Tube Pulse London v5",
   "short_name": "Tube Pulse",
-  "description": "Live Underground arrivals and station guides with labelled crowding estimates",
+  "description": "London Underground: live arrivals, TfL journeys, fares, disruption alerts, geographic map and offline station guides",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

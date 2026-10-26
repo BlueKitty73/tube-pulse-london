@@ -1,22 +1,21 @@
-# Tube Pulse London v4 — Street Map Edition
+# Tube Pulse London v5 — GitHub Pages iPhone PWA
 
-## New
-- Actual geographical London street map (Leaflet + OpenStreetMap), with all 20 featured station pins.
-- Line filters and approximate dotted connections across these featured stations.
-- Switch between **London street map** and the original **Tube diagram**.
-- Tap a station marker and **View next trains** for the existing arrival board.
+Upload **the contents** of this folder directly into the root of the same GitHub Pages repository, overwriting the v4 files. Keep `index.html` at repository root. GitHub Pages: Settings → Pages → Deploy from branch → main → /(root).
 
-## GitHub Pages upgrade
-1. Unzip this file.
-2. In your existing repository, upload all files **inside** the `tube-pulse` folder, replacing the originals in the repository root.
-3. Commit. Keep the same GitHub Pages Settings → Branch → main / (root).
-4. Refresh on Safari after Pages publishes the new version; if cached, close and reopen the Home Screen app.
+Reload in Safari after deployment. On iOS the Home Screen app may temporarily display its previously cached shell: close it, open the GitHub Pages URL in Safari, refresh, then relaunch. Favorites in local storage are retained if you keep the same site URL.
 
-## Map caveats
-- No Google Maps API key needed; Leaflet loads from CDN.
-- OpenStreetMap background map tiles require an internet connection and are used only for interactive viewing, not offline tile bulk downloads.
-- Station locations are approximate point coordinates, *not validated entrance locations*.
-- **Dashed rail connections are approximate straight lines between only the featured stations** and must not be used as a real route, accurate track alignment, or a list of all intermediate stops.
-- Map © OpenStreetMap contributors, attribution is displayed inside the map. OpenStreetMap tile servers have fair-use requirements; use a commercial map-tile provider if significant traffic develops.
-- Existing favorites and TfL arrival functions are preserved from v3.
-- Live map loading and TfL predictions depend on working third-party services and should be tested after GitHub deployment.
+## Features
+- London-only guide to the original **20 featured stations**; accessible offline after first successful loading.
+- TfL live station arrivals with platform/destination when supplied; textual reported train locations are **not GPS**.
+- London street map via Leaflet/OpenStreetMap; original schematic retained. Map overlays load geographic paths from TfL's line sequence endpoint when available, otherwise dashed illustrative connections remain.
+- From/to journey planner through TfL JourneyResults endpoint with route preference and optional step-free-to-platform request.
+- TfL fare-to endpoint; only display usable returned monetary fare figures. If no supported result, refer to official fare finder instead of guessing.
+- TfL line status and reason text, on-demand refresh.
+- Station access metadata and links to TfL's current step-free/lifts guidance, attractions and nearby place search.
+- Preserves labeled illustrative crowding patterns; **NOT yet derived from NUMBAT data**. Link to official source provided.
+- Cached local site assets/offline station guide and saved favorites. Map tiles, TfL APIs and external links require connectivity.
+
+## Reality checks
+This is a personal prototype; test TfL endpoint responses from your hosted site. TfL APIs may impose key/rate limits, and API registration may be necessary. Never embed a private API key in a public GitHub Pages repository. Real-time train occupancy, precise real-time passenger wait times, step-free guarantees and exact fares without confirmation are not provided. Where unavailable, the app should say so instead of fabricating a value.
+
+Sources: https://tfl.gov.uk/info-for/open-data-users/api-documentation , https://tfl.gov.uk/info-for/open-data-users/our-open-data , https://api-portal.tfl.gov.uk/ . OpenStreetMap tiles require internet and proper attribution.
