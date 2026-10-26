@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10244a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Tube Pulse"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><title>Tube Pulse v3 • London Underground</title><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10244a"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Tube Pulse"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-180.png"><title>Tube Pulse v4 • London Street Map</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><style>
 :root{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#142541;background:#f3f6fa;font-size:15px}*{box-sizing:border-box}body{margin:0}header{background:#10244a;color:#fff;padding:calc(env(safe-area-inset-top) + 22px) 20px 23px;border-radius:0 0 26px 26px}header .top{display:flex;align-items:center;justify-content:space-between}h1{font-size:27px;margin:0;letter-spacing:-.7px}.sub{color:#c8d6ef;margin:7px 0 20px}.roundel{height:44px;width:44px;border:9px solid #e32739;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative}.roundel:after{content:'';position:absolute;background:#10244a;width:50px;height:13px}.roundel span{z-index:1;font-size:8px;letter-spacing:.5px;font-weight:900}.search{background:white;border-radius:14px;display:flex;align-items:center;padding:0 15px;gap:10px;color:#63708a}.search input{width:100%;padding:15px 0;border:0;outline:0;font:inherit;color:#172a47}main{padding:18px 16px 100px;max-width:740px;margin:auto}.muted{color:#6f7890}.small{font-size:12px}.section-title{display:flex;justify-content:space-between;align-items:center;margin:22px 3px 11px}.section-title h2{font-size:18px;margin:0}.pill{border-radius:99px;font-size:11px;font-weight:700;padding:5px 9px;background:#ecf1f9;color:#466182}.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:6px}.tabs button{border:0;background:#e5ebf5;color:#344765;border-radius:99px;padding:9px 13px;white-space:nowrap;font-weight:600}.tabs button.active{color:white;background:#153b80}.card{background:white;border-radius:17px;padding:17px;margin:10px 0;box-shadow:0 4px 17px #0c24440b;border:1px solid #e6ebf2}.station{display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer}.station h3{font-size:17px;margin:0 0 7px}.lines{display:flex;gap:5px;flex-wrap:wrap}.line{font-size:10px;color:white;padding:4px 7px;border-radius:5px;font-weight:700}.arrow{font-size:24px;color:#6a7d9e}button{font:inherit;cursor:pointer}.linkbutton{border:0;background:none;color:#1a4fa0;font-weight:700;padding:8px}.detailHeader{display:flex;justify-content:space-between;align-items:center;gap:10px}.detailHeader h2{font-size:24px;margin:4px 0 10px}.back{background:#eaf0fa;border:0;border-radius:12px;padding:10px 13px;color:#173e7b}.row{display:flex;justify-content:space-between;align-items:center;gap:12px}.metric{font-weight:800;font-size:29px;color:#133878}.metric-label{font-size:12px;color:#6d7790}.train{padding:13px 0;border-top:1px solid #ecf0f5}.train:first-child{border:0}.eta{font-size:20px;font-weight:800;white-space:nowrap}.status{border-left:5px solid #15976e}.warning{border-left-color:#f0a338}.error{border-left-color:#df5a56}.empty{background:#f7f9fc;padding:16px;border-radius:12px;color:#66738a}.crowdrow{display:flex;gap:4px;align-items:end;height:45px}.bar{background:#cbd6e7;border-radius:5px 5px 1px 1px;flex:1}.bar.on{background:#2e6ab6}.bar.peak{background:#e5a14c}.bar.high{background:#d76560}.legend{font-size:12px;color:#727d90}.notice{font-size:12px;line-height:1.45;color:#62728c}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.chip{border-radius:8px;padding:7px 10px;background:#f0f3f8;color:#38516f;font-size:12px}select{font:inherit;padding:8px;border:1px solid #d9e1eb;border-radius:9px;background:white;color:#223d60}footer{padding:15px 0 28px;font-size:11px;color:#69758c;text-align:center}nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e6ebf2;display:flex;justify-content:space-evenly;padding:9px 10px calc(8px + env(safe-area-inset-bottom));z-index:10}nav button{border:0;background:none;color:#64748c;font-size:12px;padding:7px 9px;font-weight:700}nav button.active{color:#174f9a}.dot{height:9px;width:9px;border-radius:50%;display:inline-block;margin-right:6px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px}.timeLabels{display:flex;justify-content:space-between;font-size:10px;color:#77859b;margin-top:6px}@media(min-width:700px){header{padding-left:calc((100vw - 710px)/2);padding-right:calc((100vw - 710px)/2)}}
 
 /* v2 additions */
@@ -27,7 +27,12 @@
 .v3places{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
 .v3places a{display:flex;flex-direction:column;gap:5px;padding:14px;border:1px solid #dce7f4;border-radius:13px;text-decoration:none;color:#143f79;background:#f5f9ff;font-weight:750}
 .v3places small{color:#64748b;font-weight:400;font-size:11px}
-</style></head><body><header><div class="top"><div><h1>Tube Pulse <span style="font-size:19px">🚇</span></h1><div class="sub">Your London Underground companion · v3</div></div><div class="roundel"><span>TUBE</span></div></div><label class="search"><span>⌕</span><input id="search" placeholder="Search major London stations…" autocomplete="off" aria-label="Search stations"></label></header><main id="app"></main><nav><button data-tab="stations" class="active">⌕ Stations</button><button data-tab="map">♧ Map</button><button data-tab="lines">≋ Lines</button><button data-tab="saved">☆ Saved</button><button data-tab="about">ⓘ About</button></nav><script>
+
+/* V4 actual geographic London basemap */
+#realLondonMap{width:100%;height:clamp(440px,67vh,690px);border-radius:15px;z-index:1;background:#dbe8ed}
+.map-mode{display:flex;gap:8px;margin:10px 0}.map-mode button{flex:1;border-radius:12px;padding:12px 8px;border:1px solid #d5e1f1;background:#fff;color:#234469;font-weight:750}.map-mode button.active{background:#143d81;color:white}
+.tp-pin{border:3px solid #fff;border-radius:50%;box-shadow:0 1px 9px #0006;background:#143d81}.tp-popup-title{font-weight:850;margin-bottom:7px}.tp-popup-lines{font-size:11px;color:#5b6980;margin-bottom:10px}.tp-popup-action{border:0;border-radius:9px;background:#143d81;color:white;padding:9px 11px;font-weight:750}.leaflet-container{font-family:inherit}.leaflet-popup-content{margin:13px}
+</style></head><body><header><div class="top"><div><h1>Tube Pulse <span style="font-size:19px">🚇</span></h1><div class="sub">Your London Underground companion · v4</div></div><div class="roundel"><span>TUBE</span></div></div><label class="search"><span>⌕</span><input id="search" placeholder="Search major London stations…" autocomplete="off" aria-label="Search stations"></label></header><main id="app"></main><nav><button data-tab="stations" class="active">⌕ Stations</button><button data-tab="map">♧ Map</button><button data-tab="lines">≋ Lines</button><button data-tab="saved">☆ Saved</button><button data-tab="about">ⓘ About</button></nav><script>
 const L={bakerloo:['Bakerloo','#B36305'],central:['Central','#E32017'],circle:['Circle','#F3B61F'],district:['District','#00782A'],hammersmith:['Hammersmith & City','#F3A9BB'],jubilee:['Jubilee','#7C878E'],metropolitan:['Metropolitan','#9B0056'],northern:['Northern','#333333'],piccadilly:['Piccadilly','#003688'],victoria:['Victoria','#0098D4'],waterloo:['Waterloo & City','#76D0BD'],elizabeth:['Elizabeth','#6950A1'],dlr:['DLR','#00A4A7'],overground:['London Overground','#EE7C0E']};
 const S=[
 ['Waterloo','940GZZLUWLO',['bakerloo','jubilee','northern','waterloo'],'Major rail terminus, South Bank, London Eye and Waterloo East connections.','Rail interchange, step-free routes vary by line.'],
@@ -120,6 +125,59 @@ networkMap=function(){let html=v2NetworkMap();return html.replace('<div class="m
 const v2Wire=wireV2;
 wireV2=function(){v2Wire();document.getElementById('v3minus')?.addEventListener('click',()=>{v3Zoom=Math.max(1,Math.round((v3Zoom-.25)*100)/100);renderV2()});document.getElementById('v3plus')?.addEventListener('click',()=>{v3Zoom=Math.min(2.5,Math.round((v3Zoom+.25)*100)/100);renderV2()})};
 // Keep a visitor's v2 saved stations on upgrade. Service worker cache is versioned separately.
+
+
+// v4: Street-level geographical map. Coordinates describe station locations, not precise entrances.
+const v4Coords={
+'Waterloo':[51.5032,-0.1132],'King’s Cross St Pancras':[51.5308,-0.1238],
+'Oxford Circus':[51.5152,-0.1419],'Victoria':[51.4965,-0.1447],
+'Liverpool Street':[51.5178,-0.0823],'London Bridge':[51.5050,-0.0861],
+'Paddington':[51.5154,-0.1755],'Green Park':[51.5067,-0.1428],
+'Westminster':[51.5010,-0.1254],'Piccadilly Circus':[51.5101,-0.1340],
+'Euston':[51.5282,-0.1337],'Bank':[51.5133,-0.0886],
+'Canary Wharf':[51.5036,-0.0199],'Stratford':[51.5416,-0.0033],
+'South Kensington':[51.4941,-0.1738],'Leicester Square':[51.5113,-0.1281],
+'Bond Street':[51.5142,-0.1494],'Tottenham Court Road':[51.5165,-0.1310],
+'Camden Town':[51.5392,-0.1426],'Baker Street':[51.5226,-0.1571]};
+let v4Mode='street',v4Map=null;
+const v4ModeHTML=()=>`<div class="map-mode"><button type="button" data-v4mode="street" class="${v4Mode==='street'?'active':''}">🗺 London street map</button><button type="button" data-v4mode="diagram" class="${v4Mode==='diagram'?'active':''}">🚇 Tube diagram</button></div>`;
+const v4NetworkMap=networkMap;
+networkMap=function(){
+ const base=v4NetworkMap();
+ if(v4Mode==='diagram')return base.replace('<div class="maptools">',v4ModeHTML()+'<div class="maptools">');
+ const filter=`<div class="maptools"><button data-mapline="all" class="${mapFilter==='all'?'active':''}">All</button>${['central','northern','victoria','jubilee','piccadilly','bakerloo','circle','district','elizabeth'].map(x=>`<button data-mapline="${x}" class="${mapFilter===x?'active':''}">${esc(L[x][0])}</button>`).join('')}</div>`;
+ return `<div class="section-title"><h2>Explore London</h2><span class="pill">Real street geography</span></div><p class="notice">See where the ${S.length} featured stations are on a real London street map. Select a line to highlight its featured stations, or tap a marker to open its arrival board.</p>${v4ModeHTML()}${filter}<div class="card" style="padding:8px"><div id="realLondonMap" role="region" aria-label="Interactive map of London and featured Underground stations"></div></div><p class="v3note warn"><strong>About the coloured connecting lines:</strong> Dashed lines indicate approximate connections between featured stations. They are <strong>not</strong> the exact railway tracks, and many intermediate stops are omitted. Station pins indicate approximate locations. Use TfL's journey planner for accurate routes.</p><div class="v3row"><a class="v3btn" href="https://tfl.gov.uk/plan-a-journey/" target="_blank" rel="noopener">Official journey planner ↗</a><a class="v3btn" href="https://www.openstreetmap.org/" target="_blank" rel="noopener">OpenStreetMap ↗</a></div>`;
+};
+function v4Open(id){selected=id;arrivalFilter='all';v3Platform='all';arrivalState='idle';arrivals=[];loadedAt=null;if(v4Map){v4Map.remove();v4Map=null}renderV2();window.scrollTo({top:0,behavior:'smooth'})}
+function v4InitMap(){
+ const target=document.getElementById('realLondonMap');if(!target)return;
+ if(v4Map){v4Map.remove();v4Map=null}
+ if(typeof window.L==='undefined'){target.innerHTML='<p class="empty">The interactive street map needs an internet connection to load the map library. The Tube diagram is available above as an alternative.</p>';return}
+ const leaflet=window.L;
+ v4Map=leaflet.map(target,{zoomControl:true,scrollWheelZoom:false,preferCanvas:true}).setView([51.513,-0.105],12);
+ leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'}).addTo(v4Map);
+ const visible=S.filter(st=>mapFilter==='all'||st[2].includes(mapFilter));
+ const names=new Set(visible.map(st=>st[0]));
+ for(const [line,branches] of Object.entries(mapEdges)){
+  if(mapFilter!=='all'&&line!==mapFilter)continue;
+  for(const branch of branches){
+   let runs=branch.filter(n=>names.has(n)&&v4Coords[n]).map(n=>v4Coords[n]);
+   if(runs.length>1)leaflet.polyline(runs,{color:L[line][1],weight:3.5,opacity:.72,dashArray:'5 10',interactive:false}).addTo(v4Map);
+  }
+ }
+ const bounds=[];
+ for(const st of visible){let ll=v4Coords[st[0]];if(!ll)continue;bounds.push(ll);
+  const icon=leaflet.divIcon({className:'',html:'<div class="tp-pin" style="width:16px;height:16px;background:'+((mapFilter==='all')?'#153d80':L[mapFilter][1])+'"></div>',iconSize:[18,18],iconAnchor:[9,9]});
+  const marker=leaflet.marker(ll,{icon,title:st[0]}).addTo(v4Map);
+  const panel=document.createElement('div');const name=document.createElement('div');name.className='tp-popup-title';name.textContent=st[0];panel.appendChild(name);
+  const details=document.createElement('div');details.className='tp-popup-lines';details.textContent=st[2].map(l=>L[l]?.[0]||l).join(' · ');panel.appendChild(details);
+  const button=document.createElement('button');button.className='tp-popup-action';button.textContent='View next trains →';button.onclick=()=>v4Open(st[1]);panel.appendChild(button);marker.bindPopup(panel);
+ }
+ if(mapFilter!=='all'&&bounds.length>1)v4Map.fitBounds(bounds,{padding:[35,35],maxZoom:13});
+ setTimeout(()=>v4Map?.invalidateSize(),80);
+}
+const v4OldWire=wireV2;
+wireV2=function(){v4OldWire();document.querySelectorAll('[data-v4mode]').forEach(b=>b.onclick=()=>{v4Mode=b.dataset.v4mode;if(v4Map){v4Map.remove();v4Map=null}renderV2()});if(tab==='map'&&!selected&&v4Mode==='street')v4InitMap()};
 
 document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));document.getElementById('search').oninput=e=>{search=e.target.value;selected=null;tab='stations';render()};render();if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
 </script></body></html>

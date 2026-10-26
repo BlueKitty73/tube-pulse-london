@@ -1,23 +1,22 @@
-# Tube Pulse London — v3
+# Tube Pulse London v4 — Street Map Edition
 
-An independent personal iPhone-compatible PWA using TfL public data. London-only in this release; all 20 existing curated stations remain.
+## New
+- Actual geographical London street map (Leaflet + OpenStreetMap), with all 20 featured station pins.
+- Line filters and approximate dotted connections across these featured stations.
+- Switch between **London street map** and the original **Tube diagram**.
+- Tap a station marker and **View next trains** for the existing arrival board.
 
-## Replace your GitHub Pages version
+## GitHub Pages upgrade
+1. Unzip this file.
+2. In your existing repository, upload all files **inside** the `tube-pulse` folder, replacing the originals in the repository root.
+3. Commit. Keep the same GitHub Pages Settings → Branch → main / (root).
+4. Refresh on Safari after Pages publishes the new version; if cached, close and reopen the Home Screen app.
 
-1. Unzip this download. Open the inner `tube-pulse` directory.
-2. On GitHub, open your **existing** `tube-pulse-london` repository and upload the files inside that directory to the **root** of the repository. Commit the changes, replacing the older files with the same names.
-3. Keep the existing repository, username and Pages settings; your website URL remains unchanged.
-4. Revisit the site on your iPhone with internet connected. If the Home Screen copy still displays v2, open the page in Safari and reload it, or remove/re-add the Home Screen shortcut after refreshing.
-
-## Version 3
-
-- Keeps the featured 20-station search, favorites, TfL line status and live arrival API integration.
-- Adds expanded platform filter, a clearer train board and refresh action.
-- Adds map zoom to the existing **illustrative** clickable 20-station schematic, with a link to TfL's **full official map**. This is *not* a full interactive map of every Tube station.
-- Adds links for station-local cafes, food, attractions and shops via current Google Maps searches (not a verified or pre-fetched nearby-places database).
-- Adds direct links for official TfL step-free guidance, status updates, and journey planning. Metadata may be incomplete.
-- Keeps transparent time-of-day crowding estimates using an **illustrative heuristic**. This does not represent live train occupancy, observed passenger counts, actual wait time to enter a platform, or predictions calibrated to NUMBAT data.
-
-**Testing:** Live TfL arrivals and stop metadata need online testing on the deployed site. Requests can fail, be rate-limited, or be incomplete. Official travel information takes precedence. No native SwiftUI/IPA is included.
-
-© TfL for the public API data when retrieved; independent project, not affiliated with TfL.
+## Map caveats
+- No Google Maps API key needed; Leaflet loads from CDN.
+- OpenStreetMap background map tiles require an internet connection and are used only for interactive viewing, not offline tile bulk downloads.
+- Station locations are approximate point coordinates, *not validated entrance locations*.
+- **Dashed rail connections are approximate straight lines between only the featured stations** and must not be used as a real route, accurate track alignment, or a list of all intermediate stops.
+- Map © OpenStreetMap contributors, attribution is displayed inside the map. OpenStreetMap tile servers have fair-use requirements; use a commercial map-tile provider if significant traffic develops.
+- Existing favorites and TfL arrival functions are preserved from v3.
+- Live map loading and TfL predictions depend on working third-party services and should be tested after GitHub deployment.
